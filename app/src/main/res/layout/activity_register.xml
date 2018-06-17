@@ -6,7 +6,7 @@
     android:layout_marginTop="16dp"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".practice.IntentPracticeActivity">
+    tools:context=".practice.register.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,18 +32,19 @@
         android:layout_height="56dp">
 
         <TextView
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@id/gender"
             android:text="性别："
             android:textColor="@android:color/primary_text_light_nodisable"
             android:textSize="14sp" />
 
-        <EditText
+        <Spinner
+            android:entries="@array/spinner_gender"
             android:id="@+id/gender"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text" />
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
     </LinearLayout>
 
     <LinearLayout
@@ -92,6 +93,7 @@
         android:text="@string/accept_register" />
 
     <Button
+        android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

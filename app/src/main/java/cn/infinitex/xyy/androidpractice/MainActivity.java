@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import cn.infinitex.xyy.androidpractice.practice.HttpActivity;
-import cn.infinitex.xyy.androidpractice.practice.IntentPracticeActivity;
+import cn.infinitex.xyy.androidpractice.practice.register.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity {
     private final static List<String> pageTitles = Arrays.asList(
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = null;
                 switch (position) {
                     case 0:
-                        intent = new Intent(MainActivity.this, IntentPracticeActivity.class);
+                        intent = new Intent(MainActivity.this, RegisterActivity.class);
                         break;
                     case 1:
                         intent = new Intent(MainActivity.this, HttpActivity.class);

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">AndroidPractice</string>
     <string name="accept_register"><u>我接受注册信息</u></string>
+    <string-array name="spinner_gender">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
 </resources>
