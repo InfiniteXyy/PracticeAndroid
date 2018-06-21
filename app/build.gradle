@@ -50,4 +50,5 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
     implementation files('libs/Amap_2DMap_V5.2.0_20170627.jar')
     implementation files('libs/AMap_Location_V4.0.1_20180426.jar')
+    implementation 'com.android.support:support-v4:27.1.1'
 }
