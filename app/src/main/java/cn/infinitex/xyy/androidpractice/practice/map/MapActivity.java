@@ -1,16 +1,15 @@
-package cn.infinitex.xyy.androidpractice.practice;
+package cn.infinitex.xyy.androidpractice.practice.map;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
 
 import cn.infinitex.xyy.androidpractice.R;
 
-public class HttpActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_http);
+        setContentView(R.layout.activity_map);
     }
 }

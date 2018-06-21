@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.infinitex.xyy.androidpractice">
 
+    <!-- for internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,8 +22,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".practice.register.RegisterActivity" />
-        <activity android:name=".practice.HttpActivity" />
-        <activity android:name=".practice.register.OutputActivity"></activity>
+        <activity android:name=".practice.httpService.HttpActivity" />
+        <activity android:name=".practice.register.OutputActivity" />
+
+        <service
+            android:name=".practice.httpService.HttpService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".practice.contact.ContactActivity" />
+        <activity android:name=".practice.map.MapActivity"></activity>
     </application>
 
 </manifest>
