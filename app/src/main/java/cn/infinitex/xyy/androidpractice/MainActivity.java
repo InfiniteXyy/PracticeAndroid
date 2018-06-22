@@ -13,7 +13,9 @@ import java.util.List;
 
 import cn.infinitex.xyy.androidpractice.practice.broadcast.BroadcastActivity;
 import cn.infinitex.xyy.androidpractice.practice.contact.ContactActivity;
+import cn.infinitex.xyy.androidpractice.practice.database.DatabaseActivity;
 import cn.infinitex.xyy.androidpractice.practice.httpService.HttpActivity;
+import cn.infinitex.xyy.androidpractice.practice.log.LogDatabaseActivity;
 import cn.infinitex.xyy.androidpractice.practice.map.MapActivity;
 import cn.infinitex.xyy.androidpractice.practice.register.RegisterActivity;
 import cn.infinitex.xyy.androidpractice.practice.subject.SubjectActivity;
@@ -25,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
             "访问通讯录",
             "地图操作",
             "普通广播",
-            "学科"
+            "学科",
+            "数据库插入",
+            "数据库显示"
     );
 
     @Override
@@ -57,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
                     case 5:
                         intent = new Intent(MainActivity.this, SubjectActivity.class);
                         break;
-                    default:
+                    case 6:
+                        intent = new Intent(MainActivity.this, DatabaseActivity.class);
+                        break;
+                    case 7:
+                        intent = new Intent(MainActivity.this, LogDatabaseActivity.class);
                         break;
                 }
                 startActivity(intent);

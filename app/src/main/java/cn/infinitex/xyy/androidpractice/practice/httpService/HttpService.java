@@ -2,7 +2,6 @@ package cn.infinitex.xyy.androidpractice.practice.httpService;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -40,12 +39,12 @@ public class HttpService extends Service {
             @Override
             public void run() {
                 try {
-                    Response response = mapper.readValue(new URL(MY_URL), Response.class);
+                    ResponseEntity res = mapper.readValue(new URL(MY_URL), ResponseEntity.class);
                     StringBuilder toastText = new StringBuilder();
-                    if (response.getReturnCode() < 0) {
-                        toastText.append("学号：10165101261，回复：").append(response.getReturnValue());
-                    } else if (response.getReturnCode() == 0) {
-                        toastText.append(response.getReturnValue());
+                    if (res.getReturnCode() < 0) {
+                        toastText.append("学号：10165101261，回复：").append(res.getReturnValue());
+                    } else if (res.getReturnCode() == 0) {
+                        toastText.append(res.getReturnValue());
                     }
                     handler.post(() -> Toast.makeText(HttpService.this.getApplicationContext(),
                             toastText.toString(),

@@ -1,6 +1,6 @@
 package cn.infinitex.xyy.androidpractice.practice.httpService;
 
-public class Response {
+public class ResponseEntity {
     private int returnCode;
     private String returnValue;
 
@@ -18,13 +18,5 @@ public class Response {
 
     public void setReturnValue(String returnValue) {
         this.returnValue = returnValue;
-    }
-
-    @Override
-    public String toString() {
-        return "Response{" +
-                "returnCode=" + returnCode +
-                ", returnValue='" + returnValue + '\'' +
-                '}';
     }
 }

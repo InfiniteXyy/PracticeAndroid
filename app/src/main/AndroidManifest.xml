@@ -62,7 +62,15 @@
         </receiver>
 
         <activity android:name=".practice.broadcast.ReceiverActivity" />
-        <activity android:name=".practice.subject.SubjectActivity"></activity>
+        <activity android:name=".practice.subject.SubjectActivity" />
+        <activity android:name=".practice.database.DatabaseActivity" />
+
+        <service
+            android:name=".practice.database.DatabaseService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".practice.log.LogDatabaseActivity"></activity>
     </application>
 
 </manifest>
