@@ -11,17 +11,21 @@ import android.widget.ListView;
 import java.util.Arrays;
 import java.util.List;
 
+import cn.infinitex.xyy.androidpractice.practice.broadcast.BroadcastActivity;
 import cn.infinitex.xyy.androidpractice.practice.contact.ContactActivity;
 import cn.infinitex.xyy.androidpractice.practice.httpService.HttpActivity;
 import cn.infinitex.xyy.androidpractice.practice.map.MapActivity;
 import cn.infinitex.xyy.androidpractice.practice.register.RegisterActivity;
+import cn.infinitex.xyy.androidpractice.practice.subject.SubjectActivity;
 
 public class MainActivity extends AppCompatActivity {
     private final static List<String> pageTitles = Arrays.asList(
             "Activity 跳转",
             "网络请求",
             "访问通讯录",
-            "地图操作"
+            "地图操作",
+            "普通广播",
+            "学科"
     );
 
     @Override
@@ -46,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 3:
                         intent = new Intent(MainActivity.this, MapActivity.class);
+                        break;
+                    case 4:
+                        intent = new Intent(MainActivity.this, BroadcastActivity.class);
+                        break;
+                    case 5:
+                        intent = new Intent(MainActivity.this, SubjectActivity.class);
                         break;
                     default:
                         break;

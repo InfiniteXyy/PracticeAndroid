@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".practice.broadcast.BroadcastActivity">
+    tools:context=".practice.broadcast.ReceiverActivity">
 
-    <Button
-        android:id="@+id/btn_send"
+    <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="发送广播"/>
-
+        android:textColor="@android:color/primary_text_light"
+        android:textSize="50sp"/>
 </FrameLayout>

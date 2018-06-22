@@ -1,6 +1,7 @@
 package cn.infinitex.xyy.androidpractice.practice.map;
 
 import android.annotation.SuppressLint;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -46,13 +47,12 @@ public class MapActivity extends AppCompatActivity implements AMapLocationListen
         aMap.setMyLocationEnabled(true);
 
 
-        //定位的小图标 默认是蓝点 这里自定义一团火，其实就是一张图片
+        //定位的小图标
         MyLocationStyle myLocationStyle = new MyLocationStyle();
         myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
         myLocationStyle.radiusFillColor(android.R.color.transparent);
         myLocationStyle.strokeColor(android.R.color.transparent);
         aMap.setMyLocationStyle(myLocationStyle);
-
     }
 
     private void getLocation() {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_math"
+            android:title="数学"/>
+        <item
+            android:id="@+id/nav_physics"
+            android:title="物理"/>
+        <item
+            android:id="@+id/nav_computer"
+            android:title="计算机"/>
+    </group>
+</menu>
