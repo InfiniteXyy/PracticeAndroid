@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
-import android.widget.Toast;
 
 import cn.infinitex.xyy.androidpractice.R;
 

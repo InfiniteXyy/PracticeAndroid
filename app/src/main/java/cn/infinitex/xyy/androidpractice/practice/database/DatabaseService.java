@@ -33,10 +33,9 @@ public class DatabaseService extends Service {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                String time = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).format(new Date());
+                long time = new Date().getTime();
                 String log = "日志：" + DateFormat.getTimeInstance().format(new Date());
-                db.execSQL(String.format("insert into Log (create_time, log) values ('%s', '%s')", time, log));
-
+                db.execSQL(String.format("insert into Log (create_time, log) values ('%d', '%s')", time, log));
                 handler.post(() -> Toast.makeText(DatabaseService.this.getApplicationContext(),
                         "插入" + log, Toast.LENGTH_SHORT).show());
             }

@@ -7,6 +7,7 @@
 - **常规地图操作** (LBS)
 - **发送广播** (广播/Activity跳转/通知)
 - **学科菜单** (Material Design 左滑/Fragment)
-## To do
 - **日志记录** (数据库访问/service)
 - **显示数据库日志** (数据库访问/RecyclerView刷新)
+## To do
+> Final Test

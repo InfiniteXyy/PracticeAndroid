@@ -19,6 +19,5 @@ public class DatabaseActivity extends AppCompatActivity {
             Intent intent = new Intent(this, DatabaseService.class);
             stopService(intent);
         });
-
     }
 }

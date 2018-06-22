@@ -1,12 +1,8 @@
 package cn.infinitex.xyy.androidpractice.practice.httpService;
 
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import cn.infinitex.xyy.androidpractice.R;
 

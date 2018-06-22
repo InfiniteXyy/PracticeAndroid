@@ -3,7 +3,18 @@ package cn.infinitex.xyy.androidpractice.practice.register;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Person implements Parcelable{
+public class Person implements Parcelable {
+    public static final Creator<Person> CREATOR = new Creator<Person>() {
+        @Override
+        public Person createFromParcel(Parcel in) {
+            return new Person(in);
+        }
+
+        @Override
+        public Person[] newArray(int size) {
+            return new Person[size];
+        }
+    };
     private String name;
     private String password;
     private int gender;
@@ -19,18 +30,6 @@ public class Person implements Parcelable{
         password = in.readString();
         gender = in.readInt();
     }
-
-    public static final Creator<Person> CREATOR = new Creator<Person>() {
-        @Override
-        public Person createFromParcel(Parcel in) {
-            return new Person(in);
-        }
-
-        @Override
-        public Person[] newArray(int size) {
-            return new Person[size];
-        }
-    };
 
     public String getName() {
         return name;

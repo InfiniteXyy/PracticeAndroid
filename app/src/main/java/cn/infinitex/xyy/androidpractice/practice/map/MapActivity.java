@@ -1,7 +1,5 @@
 package cn.infinitex.xyy.androidpractice.practice.map;
 
-import android.annotation.SuppressLint;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,9 +17,6 @@ import com.amap.api.maps2d.UiSettings;
 import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.MyLocationStyle;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import cn.infinitex.xyy.androidpractice.R;
 
@@ -81,7 +76,7 @@ public class MapActivity extends AppCompatActivity implements AMapLocationListen
                 CameraUpdate move = CameraUpdateFactory.newLatLngZoom(ll, 12.5f);
                 aMap.animateCamera(move);
             } else {
-                Log.e("AmapError","location Error, ErrCode:"
+                Log.e("AmapError", "location Error, ErrCode:"
                         + amapLocation.getErrorCode() + ", errInfo:"
                         + amapLocation.getErrorInfo());
             }

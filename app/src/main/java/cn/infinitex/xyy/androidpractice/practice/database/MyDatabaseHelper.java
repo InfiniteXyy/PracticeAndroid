@@ -6,13 +6,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
-    private Context mContext;
     private static final String CREATE_LOG =
             " create table Log (" +
-            "     id integer primary key autoincrement," +
-            "     create_time text," +
-            "     log text" +
-            " )";
+                    "     id integer primary key autoincrement," +
+                    "     create_time integer," +
+                    "     log text" +
+                    " )";
+    private Context mContext;
+
     public MyDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
         mContext = context;

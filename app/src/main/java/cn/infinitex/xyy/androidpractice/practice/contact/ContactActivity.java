@@ -1,7 +1,6 @@
 package cn.infinitex.xyy.androidpractice.practice.contact;
 
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -10,9 +9,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,13 +18,13 @@ import java.util.List;
 import cn.infinitex.xyy.androidpractice.R;
 
 public class ContactActivity extends AppCompatActivity {
-    ArrayAdapter<User> adapter;
-    List<User> contactsList = new ArrayList<>(); // 重写User的toString方法实现仅显示名字
-    private static final String[] PROJECTION = new String[] {
+    private static final String[] PROJECTION = new String[]{
             ContactsContract.CommonDataKinds.Email.CONTACT_ID,
             ContactsContract.Contacts.DISPLAY_NAME,
             ContactsContract.CommonDataKinds.Email.DATA
     };
+    ArrayAdapter<User> adapter;
+    List<User> contactsList = new ArrayList<>(); // 重写User的toString方法实现仅显示名字
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

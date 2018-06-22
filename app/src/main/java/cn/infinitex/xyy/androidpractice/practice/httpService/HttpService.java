@@ -16,10 +16,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class HttpService extends Service {
-    private ObjectMapper mapper = new ObjectMapper();
     private final static String MY_URL = "http://115.29.231.93:8080/CkeditorTest/AndroidTest?userId=10165101261&style=json";
     private static final String TAG = "HttpService";
+    private ObjectMapper mapper = new ObjectMapper();
     private Timer timer = new Timer();
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -53,7 +54,7 @@ public class HttpService extends Service {
                     e.printStackTrace();
                 }
             }
-        },0, 4000);
+        }, 0, 4000);
         return super.onStartCommand(intent, flags, startId);
     }
 
