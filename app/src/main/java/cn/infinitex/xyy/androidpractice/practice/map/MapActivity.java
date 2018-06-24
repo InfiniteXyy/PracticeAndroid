@@ -1,6 +1,10 @@
 package cn.infinitex.xyy.androidpractice.practice.map;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
@@ -31,7 +35,12 @@ public class MapActivity extends AppCompatActivity implements AMapLocationListen
         MapView mapView = findViewById(R.id.map);
         positionTv = findViewById(R.id.position);
         mapView.onCreate(savedInstanceState);
-        getLocation();
+        // 提示用户获取权限
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+        } else {
+            getLocation();
+        }
         aMap = mapView.getMap();
 
         //设置显示定位按钮 并且可以点击
@@ -40,7 +49,6 @@ public class MapActivity extends AppCompatActivity implements AMapLocationListen
         settings.setMyLocationButtonEnabled(true);
         // 是否可触发定位并显示定位层
         aMap.setMyLocationEnabled(true);
-
 
         //定位的小图标
         MyLocationStyle myLocationStyle = new MyLocationStyle();

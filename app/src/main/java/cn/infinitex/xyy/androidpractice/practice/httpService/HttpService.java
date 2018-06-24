@@ -17,14 +17,12 @@ import java.util.TimerTask;
 
 public class HttpService extends Service {
     private final static String MY_URL = "http://115.29.231.93:8080/CkeditorTest/AndroidTest?userId=10165101261&style=json";
-    private static final String TAG = "HttpService";
     private ObjectMapper mapper = new ObjectMapper();
     private Timer timer = new Timer();
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate: ");
     }
 
     @Override
@@ -32,9 +30,10 @@ public class HttpService extends Service {
         return null;
     }
 
+
+    // 使用Handler在主线程中运行代码，使用Timer定时重复代码片段
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand: ");
         Handler handler = new Handler(Looper.getMainLooper());
         timer.schedule(new TimerTask() {
             @Override

@@ -14,10 +14,8 @@ public class OutputActivity extends AppCompatActivity {
         setContentView(R.layout.activity_output);
         Person person = getIntent().getParcelableExtra("person");
         TextView tv = findViewById(R.id.text);
-        tv.setText(
-                String.format("姓名：%s\n性别：%s\n密码：%s\n", person.getName(),
-                        person.getGender() == 0 ? "男" : "女",
-                        person.getPassword())
-        );
+        tv.setText(String.format("姓名：%s\n性别：%s\n密码：%s\n", person.getName(),
+                person.getGender() == 0 ? "男" : "女",
+                person.getPassword()));
     }
 }

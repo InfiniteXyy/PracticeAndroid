@@ -65,6 +65,7 @@ public class LogDatabaseActivity extends AppCompatActivity {
         cursor.close();
     }
 
+    // 得到今天早上0点的时刻，（有更好的办法）
     private long getToday() {
         long d = new Date().getTime();
         int offset = TimeZone.getDefault().getOffset(d);

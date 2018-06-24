@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -28,28 +27,28 @@ public class RegisterActivity extends AppCompatActivity {
         final CheckBox box = findViewById(R.id.checkBox);
 
         Button button = findViewById(R.id.btn);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!box.isChecked()) {
-                    Toast.makeText(RegisterActivity.this, "请确认协议", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                final String name = nameEt.getText().toString();
-                final int gender = genderSp.getSelectedItemPosition();
-                final String password1 = password1Et.getText().toString();
-                final String password2 = password2Et.getText().toString();
+        button.setOnClickListener(v -> {
+            // 若没有确认协议，弹出提示，并结束判断
+            if (!box.isChecked()) {
+                Toast.makeText(RegisterActivity.this, "请确认协议", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-                if (!name.equals("") && !password1.equals("") && password1.equals(password2)) {
-                    Person person = new Person(name, password1, gender);
-                    Log.d(TAG, String.valueOf(person));
-                    Intent intent = new Intent(RegisterActivity.this, OutputActivity.class);
-                    intent.putExtra("person", person);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(RegisterActivity.this, "输入信息有误", Toast.LENGTH_SHORT).show();
-                    password2Et.setText("");
-                }
+            final String name = nameEt.getText().toString();
+            final int gender = genderSp.getSelectedItemPosition();
+            final String password1 = password1Et.getText().toString();
+            final String password2 = password2Et.getText().toString();
+
+            // 若名字为空，或两次密码不一致，弹出信息。否则，启动另一个Activity
+            if (!name.equals("") && !password1.equals("") && password1.equals(password2)) {
+                Person person = new Person(name, password1, gender);
+                Log.d(TAG, String.valueOf(person));
+                Intent intent = new Intent(RegisterActivity.this, OutputActivity.class);
+                intent.putExtra("person", person);
+                startActivity(intent);
+            } else {
+                Toast.makeText(RegisterActivity.this, "输入信息有误", Toast.LENGTH_SHORT).show();
+                password2Et.setText("");
             }
         });
     }

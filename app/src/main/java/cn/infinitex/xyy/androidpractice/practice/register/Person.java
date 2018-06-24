@@ -3,6 +3,7 @@ package cn.infinitex.xyy.androidpractice.practice.register;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+// 实现Parcelable接口，实例可以通过Intent传递
 public class Person implements Parcelable {
     public static final Creator<Person> CREATOR = new Creator<Person>() {
         @Override

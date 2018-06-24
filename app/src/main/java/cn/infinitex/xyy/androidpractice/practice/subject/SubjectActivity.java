@@ -36,26 +36,24 @@ public class SubjectActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
         // 设置侧滑栏
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.nav_math);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.nav_math:
-                        tv.setText(description.get(0));
-                        break;
-                    case R.id.nav_physics:
-                        tv.setText(description.get(1));
-                        break;
-                    case R.id.nav_computer:
-                        tv.setText(description.get(2));
-                        break;
-                }
-                drawerLayout.closeDrawers();
-                return true;
+        navigationView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.nav_math:
+                    tv.setText(description.get(0));
+                    break;
+                case R.id.nav_physics:
+                    tv.setText(description.get(1));
+                    break;
+                case R.id.nav_computer:
+                    tv.setText(description.get(2));
+                    break;
             }
+            drawerLayout.closeDrawers();
+            return true;
         });
         //设置 fragment (搁置)
     }

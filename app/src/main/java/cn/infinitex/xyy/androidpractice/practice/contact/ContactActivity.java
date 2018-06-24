@@ -43,6 +43,7 @@ public class ContactActivity extends AppCompatActivity {
         }
     }
 
+    // 点击列表后显示用户信息
     private void showUserDetail(User user) {
         AlertDialog alertDialog = new AlertDialog.Builder(ContactActivity.this).create();
         alertDialog.setTitle("详细内容");
@@ -52,6 +53,8 @@ public class ContactActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+
+    // 读取联系人信息，（若联系人中有一个人没有邮件信息，就会停止读取。需要修复）
     private void readContacts() {
         Cursor cursor = null;
         Cursor cursorEmail = null;
@@ -76,6 +79,9 @@ public class ContactActivity extends AppCompatActivity {
         } finally {
             if (cursor != null) {
                 cursor.close();
+            }
+            if (cursorEmail != null) {
+                cursorEmail.close();
             }
         }
     }
